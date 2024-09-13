@@ -8,6 +8,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import java.math.BigDecimal;
+import java.time.LocalDateTime;
 import java.util.Date;
 
 @Entity
@@ -32,8 +33,7 @@ public class Invoice {
     @Enumerated(EnumType.STRING)
     private PaymentStatus paymentStatus = PaymentStatus.UNPAID;
 
-    @Temporal(TemporalType.TIMESTAMP)
-    private Date issuedAt = new Date();
+    private LocalDateTime issuedAt;
 }
 
 

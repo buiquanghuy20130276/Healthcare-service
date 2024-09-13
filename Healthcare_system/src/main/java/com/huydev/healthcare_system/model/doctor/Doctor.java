@@ -22,7 +22,5 @@ public class Doctor {
     @OneToOne
     @JoinColumn(name = "user_id", nullable = false)
     private User user;
-
-    private String specialty;
     private int experienceYears;
 }

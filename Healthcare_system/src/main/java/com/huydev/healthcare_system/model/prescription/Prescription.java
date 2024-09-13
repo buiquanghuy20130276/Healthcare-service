@@ -3,11 +3,19 @@ package com.huydev.healthcare_system.model.prescription;
 import com.huydev.healthcare_system.model.doctor.Doctor;
 import com.huydev.healthcare_system.model.patient.Patient;
 import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import java.sql.Date;
 
 @Entity
 @Table(name = "prescriptions")
+@Data
+@NoArgsConstructor
+@AllArgsConstructor
+@Builder
 public class Prescription {
 
     @Id
@@ -22,7 +30,6 @@ public class Prescription {
     @JoinColumn(name = "doctor_id", nullable = false)
     private Doctor doctor;
 
-    @Temporal(TemporalType.DATE)
     private Date prescriptionDate;
 
     @Column(length = 1000)

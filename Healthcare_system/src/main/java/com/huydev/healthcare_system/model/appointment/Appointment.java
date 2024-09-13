@@ -30,7 +30,6 @@ public class Appointment {
     @JoinColumn(name = "doctor_id", nullable = false)
     private Doctor doctor;
 
-    @Temporal(TemporalType.TIMESTAMP)
     private Date appointmentDate;
 
     @Enumerated(EnumType.STRING)

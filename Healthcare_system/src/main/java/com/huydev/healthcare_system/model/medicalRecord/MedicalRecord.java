@@ -3,11 +3,20 @@ package com.huydev.healthcare_system.model.medicalRecord;
 import com.huydev.healthcare_system.model.doctor.Doctor;
 import com.huydev.healthcare_system.model.patient.Patient;
 import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
+import java.time.LocalDateTime;
 import java.util.Date;
 
 @Entity
 @Table(name = "medical_records")
+@Data
+@NoArgsConstructor
+@AllArgsConstructor
+@Builder
 public class MedicalRecord {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -29,7 +38,6 @@ public class MedicalRecord {
     @Column(length = 1000)
     private String prescription;
 
-    @Temporal(TemporalType.TIMESTAMP)
-    private Date createdAt = new Date();
+    private LocalDateTime createdAt;
 
 }

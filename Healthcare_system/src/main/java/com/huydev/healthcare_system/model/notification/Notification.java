@@ -7,6 +7,7 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.time.LocalDateTime;
 import java.util.Date;
 
 @Entity
@@ -28,8 +29,7 @@ public class Notification {
     @Column(nullable = false, length = 1000)
     private String message;
 
-    @Temporal(TemporalType.TIMESTAMP)
-    private Date createdAt = new Date();
+    private LocalDateTime createdAt;
 
     private boolean isRead = false;
 }
